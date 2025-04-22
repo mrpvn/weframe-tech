@@ -2,7 +2,7 @@ import { ChevronLeft, ChevronDown } from "lucide-react";
 
 export function TopBar() {
   return (
-    <header className="h-16 bg-white dark:bg-gray-800 border-b flex-1 border-gray-200 dark:border-gray-700 flex items-center justify-between px-6 sticky top-0 z-10">
+    <header className="h-16 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between px-6 sticky top-0 z-10">
       <div className="flex items-center">
         <ChevronLeft className="mr-5 text-gray-700 dark:text-gray-300" />
         <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
