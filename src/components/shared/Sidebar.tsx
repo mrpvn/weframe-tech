@@ -1,65 +1,84 @@
+"use client";
+
 import {
-  BarChart2,
-  Bell,
-  CreditCard,
+  Contact,
   FileText,
-  Globe,
-  Headphones,
   ImageIcon,
   LayoutDashboard,
-  ListTodo,
-  Palette,
   Settings,
   User,
+  Bell,
+  ListTodo,
+  Globe,
+  BarChart2,
+  Palette,
+  CreditCard,
 } from "lucide-react";
-import React from "react";
 
-const Sidebar = () => {
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarRail,
+} from "@/components/ui/sidebar";
+
+const DashboardSidebar = () => {
   const menuItems = [
-    { icon: LayoutDashboard, label: "Dashboard" },
-    { icon: FileText, label: "Content", active: true },
-    { icon: User, label: "User" },
-    { icon: ListTodo, label: "Task" },
-    { icon: Globe, label: "App/Web" },
-    { icon: BarChart2, label: "Analytics" },
-    { icon: ImageIcon, label: "Media" },
-    { icon: Palette, label: "Customize" },
-    { icon: Bell, label: "Notifications" },
-    { icon: CreditCard, label: "Subscription" },
-    { icon: Settings, label: "Settings" },
+    { icon: LayoutDashboard, label: "Dashboard", tooltip: "Dashboard" },
+    {
+      icon: FileText,
+      label: "Content",
+      active: true,
+      tooltip: "Content",
+    },
+    { icon: User, label: "User", tooltip: "User" },
+    { icon: ListTodo, label: "Task", tooltip: "Task" },
+    { icon: Globe, label: "App/Web", tooltip: "App/Web" },
+    { icon: BarChart2, label: "Analytics", tooltip: "Analytics" },
+    { icon: ImageIcon, label: "Media", tooltip: "Media" },
+    { icon: Palette, label: "Customize", tooltip: "Customize" },
+    { icon: Bell, label: "Notifications", tooltip: "Notifications" },
+    { icon: CreditCard, label: "Subscription", tooltip: "Subscription" },
+    { icon: Settings, label: "Settings", tooltip: "Settings" },
   ];
   return (
-    <div className="w-[220px] bg-white h-screen border-r flex flex-col">
-      <div className="flex-1 py-6">
-        <ul className="space-y-1 px-3">
-          {menuItems.map((item, index) => (
-            <li key={index}>
-              <a
-                href="#"
-                className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm ${
-                  item.active
-                    ? "bg-[#5F3DC4] text-white"
-                    : "text-gray-700 hover:bg-gray-100"
-                }`}
+    <Sidebar className="border-r border-[#e7e8ef] text-black">
+      <SidebarHeader className="flex h-16 items-center px-4"></SidebarHeader>
+      <SidebarContent className="p-5">
+        <SidebarMenu>
+          <SidebarMenuItem>
+            {menuItems.map((item, index) => (
+              <SidebarMenuButton
+                variant="default"
+                key={index}
+                tooltip={item.tooltip}
+                className="hover:bg-[#1C1442] hover:text-white text-[12px] p-5 gap-3 rounded-[12px] cursor-pointer"
               >
-                <item.icon className="w-5 h-5" />
+                <item.icon className="h-5 w-5" />
                 <span>{item.label}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="p-3">
-        <a
-          href="#"
-          className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm bg-lavender bg-[#E8E9FF] text-[#5F3DC4]"
-        >
-          <Headphones className="w-5 h-5" />
-          <span>Contact Support</span>
-        </a>
-      </div>
-    </div>
+              </SidebarMenuButton>
+            ))}
+          </SidebarMenuItem>
+        </SidebarMenu>
+        <SidebarMenu className="mt-5">
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              variant="default"
+              className="p-5 bg-[#E8E9FF] rounded-[12px] cursor-pointer hover:bg-[#e8e9ffb7]"
+              tooltip="Contact Support"
+            >
+              <Contact className="h-5 w-5" />
+              <span>Contact Support</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarContent>
+      <SidebarRail />
+    </Sidebar>
   );
 };
 
-export default Sidebar;
+export default DashboardSidebar;

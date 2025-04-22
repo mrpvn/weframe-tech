@@ -128,6 +128,8 @@ function StoryCard({ story }: StoryCardProps) {
           src={story.image || "/placeholder.svg"}
           alt={story.title}
           className="w-full h-full object-cover"
+          width={1}
+          height={1}
         />
 
         {/* Top overlay elements */}
