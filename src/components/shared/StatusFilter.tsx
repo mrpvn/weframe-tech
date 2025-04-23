@@ -10,11 +10,11 @@ export function StatusFilter({
   setActiveFilter,
 }: StatusFilterProps) {
   const filters = [
-    { name: "All", count: 4500 },
-    { name: "Draft", count: 1203 },
-    { name: "Pending", count: 890 },
-    { name: "Published", count: 2432 },
-    { name: "Archived", count: 320 },
+    { name: "All", count: 8 },
+    { name: "Draft", count: 2 },
+    { name: "Pending", count: 1 },
+    { name: "Published", count: 3 },
+    { name: "Archived", count: 1 },
   ];
 
   return (
@@ -23,13 +23,20 @@ export function StatusFilter({
         <button
           key={filter.name}
           onClick={() => setActiveFilter(filter.name)}
-          className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+          className={`px-4 py-2 rounded-[10px] cursor-pointer text-sm font-semibold leading-6 transition-colors duration-200 ${
             activeFilter === filter.name
-              ? "bg-[#533BFF] text-white"
-              : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+              ? "bg-[#1C1442] text-[#E9E9E9]"
+              : "bg-[#E7E8EF] text-gray-700 border border-gray-200"
           }`}
         >
-          {filter.name} ({filter.count})
+          {filter.name}{" "}
+          <span
+            className={`${
+              activeFilter === filter.name ? "text-[#E9E9E9]" : "text-[#A0A3BD]"
+            }`}
+          >
+            ({filter.count})
+          </span>
         </button>
       ))}
     </div>

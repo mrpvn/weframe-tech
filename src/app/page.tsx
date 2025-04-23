@@ -11,7 +11,7 @@ import { useState } from "react";
 export default function Home() {
   const [activeFilter, setActiveFilter] = useState("All");
   return (
-    <div className="flex h-screen bg-gray-50 dark:bg-gray-900 font-inter">
+    <div className="flex bg-gray-50 dark:bg-gray-900 font-inter">
       <SidebarProvider defaultOpen={true}>
         <DashboardSidebar />
         <div className="flex-1 flex flex-col">
