@@ -1,6 +1,8 @@
-import { Search, Calendar, Filter } from "lucide-react";
+import { Plus, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import CalenderIcon from "@/icons/CalenderIcon";
+import FilterIcon from "@/icons/FilterIcon";
 
 export function SearchRow() {
   return (
@@ -19,7 +21,7 @@ export function SearchRow() {
           size="icon"
           className="h-10 w-10 rounded-[10px] border-gray-200 bg-[#E7E8EF] cursor-pointer"
         >
-          <Calendar className="h-4 w-4" />
+          <CalenderIcon className="h-10 w-10" />
           <span className="sr-only">Date picker</span>
         </Button>
 
@@ -28,13 +30,15 @@ export function SearchRow() {
           size="icon"
           className="h-10 w-10 rounded-[10px] border-gray-200 bg-[#E7E8EF] cursor-pointer"
         >
-          <Filter className="h-4 w-4" />
+          <FilterIcon className="h-4 w-4" />
           <span className="sr-only">Filter</span>
         </Button>
       </div>
       <Button className="h-10 px-4 max-sm:ml-2 md:ml-15 rounded-[10px] bg-[#1C1442] hover:bg-[#1c1442c8] text-white cursor-pointer">
         <span className="hidden sm:inline">Add New Story</span>
-        <span className="sm:hidden">+</span>
+        <span className="sm:hidden">
+          <Plus size={24} />
+        </span>
       </Button>
     </div>
   );

@@ -1,6 +1,8 @@
-import { Eye, Copy, MoreVertical } from "lucide-react";
+import { MoreVertical } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import StatusUp from "@/icons/StatusUp";
+import EyeIcon from "@/icons/EyeIcon";
 
 interface StoriesGridProps {
   filter: string;
@@ -135,11 +137,11 @@ function StoryCard({ story }: StoryCardProps) {
         {/* Top overlay elements */}
         <div className="absolute top-2 right-2 md:top-3 md:right-3 flex gap-1 items-center text-white z-20">
           <div className="flex items-center rounded-[5px] bg-white py-2 px-3 md:py-1 md:px-2 text-black text-base md:text-xs">
-            <Eye className="h-5 w-5 mr-1" />
+            <EyeIcon className="h-5 w-5 mr-1" />
             <span className="text-sm md:text-xs">{story.views}</span>
           </div>
           <div className="flex items-center rounded-[5px] bg-white py-2 px-3 md:py-1 md:px-2 text-black text-base md:text-xs">
-            <Copy className="h-5 w-5 mr-1" />
+            <StatusUp className="h-5 w-5 mr-1" />
           </div>
         </div>
 
