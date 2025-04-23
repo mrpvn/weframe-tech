@@ -23,7 +23,9 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { useState } from "react";
 
 const DashboardSidebar = () => {
   const menuItems = [
@@ -44,18 +46,32 @@ const DashboardSidebar = () => {
     { icon: CreditCard, label: "Subscription", tooltip: "Subscription" },
     { icon: Settings, label: "Settings", tooltip: "Settings" },
   ];
+
+  const [isCollapsed, setIsCollapsed] = useState(false); // State to track collapse status
+
+  const toggleSidebar = () => {
+    setIsCollapsed(!isCollapsed); // Toggle the collapse state
+  };
+
   return (
-    <Sidebar className="border-r border-[#e7e8ef] text-black">
-      <SidebarHeader className="flex h-16 items-center px-4"></SidebarHeader>
-      <SidebarContent className="p-5">
+    <Sidebar
+      collapsible="icon"
+      className="border-r border-[#e7e8ef] text-[#53545C]"
+    >
+      <SidebarHeader
+        className={`flex h-16 items-end ${isCollapsed ? "px-2" : "px-4"}`}
+      >
+        <SidebarTrigger className="cursor-pointer" onClick={toggleSidebar} />
+      </SidebarHeader>
+      <SidebarContent className={`${isCollapsed ? "p-2" : "p-5"}`}>
         <SidebarMenu>
-          <SidebarMenuItem>
+          <SidebarMenuItem className="flex flex-col gap-1">
             {menuItems.map((item, index) => (
               <SidebarMenuButton
                 variant="default"
                 key={index}
                 tooltip={item.tooltip}
-                className="hover:bg-[#1C1442] hover:text-white text-[12px] p-5 gap-3 rounded-[12px] cursor-pointer"
+                className="hover:bg-[#1C1442] hover:text-white text-[14px] font-semibold p-5 gap-3 rounded-[12px] cursor-pointer"
               >
                 <item.icon className="h-5 w-5" />
                 <span>{item.label}</span>

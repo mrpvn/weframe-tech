@@ -122,7 +122,7 @@ interface StoryCardProps {
 function StoryCard({ story }: StoryCardProps) {
   return (
     <div className="rounded-2xl overflow-hidden shadow-sm border cursor-pointer border-gray-100 dark:border-gray-800 bg-white group">
-      <div className="relative aspect-[3/4] overflow-hidden">
+      <div className="relative aspect-[17/25] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-black/80 group-hover:opacity-0 transition-opacity duration-250 ease-out z-5"></div>
         <Image
           src={story.image || "/placeholder.svg"}
@@ -134,11 +134,11 @@ function StoryCard({ story }: StoryCardProps) {
 
         {/* Top overlay elements */}
         <div className="absolute top-2 right-2 md:top-3 md:right-3 flex gap-1 items-center text-white z-20">
-          <div className="flex items-center rounded-[5px] bg-white py-2 px-3 text-black text-base md:text-sm">
+          <div className="flex items-center rounded-[5px] bg-white py-2 px-3 md:py-1 md:px-2 text-black text-base md:text-xs">
             <Eye className="h-5 w-5 mr-1" />
             <span className="text-sm md:text-xs">{story.views}</span>
           </div>
-          <div className="flex items-center rounded-[5px] bg-white py-2 px-3 text-black text-base md:text-sm">
+          <div className="flex items-center rounded-[5px] bg-white py-2 px-3 md:py-1 md:px-2 text-black text-base md:text-xs">
             <Copy className="h-5 w-5 mr-1" />
           </div>
         </div>
