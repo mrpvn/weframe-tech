@@ -132,6 +132,7 @@ function StoryCard({ story }: StoryCardProps) {
           className="w-full h-full object-cover"
           width={500}
           height={375}
+          priority
         />
 
         {/* Top overlay elements */}
@@ -147,9 +148,9 @@ function StoryCard({ story }: StoryCardProps) {
 
         {/* Bottom content */}
         <div className="absolute bottom-0 gap-2 flex flex-col left-0 right-0 p-4 md:p-3 z-20">
-          <h3 className="text-white font-medium text-lg md:text-base line-clamp-2 mb-1">
+          <p className="text-white font-medium text-lg md:text-base line-clamp-2 mb-1">
             {story.title}
-          </h3>
+          </p>
           <div className="flex items-center font-semibold justify-between">
             <div className="text-white text-base md:text-sm">
               {story.category} •{" "}
