@@ -34,9 +34,9 @@ export function SearchRow() {
           <span className="sr-only">Filter</span>
         </Button>
       </div>
-      <Button className="h-10 px-4 max-sm:ml-2 md:ml-15 rounded-[10px] bg-[#1C1442] hover:bg-[#1c1442c8] text-white cursor-pointer">
-        <span className="hidden sm:inline">Add New Story</span>
-        <span className="sm:hidden">
+      <Button className="h-10 px-4 max-sm:ml-2 max-md:ml-4 md:ml-15 rounded-[10px] bg-[#1C1442] hover:bg-[#1c1442c8] text-white cursor-pointer">
+        <span className="hidden md:block">Add New Story</span>
+        <span className="block md:hidden">
           <Plus size={24} />
         </span>
       </Button>

@@ -100,7 +100,7 @@ export function StoriesGrid({ filter }: StoriesGridProps) {
       : stories.filter((story) => story.status === filter);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+    <div className="grid max-sm:grid-cols-1 max-md:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
       {filteredStories.map((story) => (
         <StoryCard key={story.id} story={story} />
       ))}
